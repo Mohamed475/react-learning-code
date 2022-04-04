@@ -1,7 +1,7 @@
 import classes from './Auth.module.css';
 import { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { authActions } from '../store';
+import { authActions } from '../store/auth';
 
 const Auth = () => {
   // Redux data.
@@ -19,10 +19,10 @@ const Auth = () => {
     e.preventDefault();
 
     // Simple login validation just for testing.
-    if (email.length === 0 || password.length === 0) {
-      console.log('Unable to login!');
-      return;
-    }
+    // if (email.length === 0 || password.length === 0) {
+    //   console.log('Unable to login!');
+    //   return;
+    // }
 
     // Dispatch.
     dispatch(authActions.login());
