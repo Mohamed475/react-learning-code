@@ -1,9 +1,9 @@
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Welcome from './pages/Welcome';
 import Products from './pages/Products';
 import Navbar from './components/Navbar';
-import ProductDetails from './components/ProductDetails';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   return (
@@ -11,6 +11,9 @@ function App() {
       <Navbar />
       <main>
         <Switch>
+          {/* <Route path="/" exact>
+            <Redirect to="/welcome" />
+          </Route> */}
           <Route path="/welcome">
             <Welcome />
           </Route>
@@ -19,6 +22,9 @@ function App() {
           </Route>
           <Route path="/products/:productId">
             <ProductDetails />
+          </Route>
+          <Route path="/">
+            <Redirect to="/welcome" />
           </Route>
         </Switch>
       </main>
